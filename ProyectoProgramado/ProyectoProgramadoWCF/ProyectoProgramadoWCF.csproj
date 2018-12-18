@@ -52,7 +52,7 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Logica\Interfaces\IProyectoProgramadoWCF.cs" />
+    <Compile Include="IServiceUser.cs" />
     <Compile Include="ModeloBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,7 +69,7 @@
       <DependentUpon>ModeloBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logica\Servicios\ServicioProyectoProgramadoWCF.cs" />
+    <Compile Include="ServiceUser.cs" />
     <Compile Include="SubCategoria.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
@@ -91,6 +91,7 @@
   <ItemGroup>
     <Folder Include="Logica\Acciones\" />
     <Folder Include="Logica\Especificaciones\" />
+    <Folder Include="Logica\Validaciones\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
