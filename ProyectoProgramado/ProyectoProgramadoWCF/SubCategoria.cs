@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoProgramado
+namespace ProyectoProgramadoWCF
 {
     using System;
     using System.Collections.Generic;
@@ -20,9 +20,9 @@ namespace ProyectoProgramado
             this.Articulo = new HashSet<Articulo>();
         }
     
-        public short IdSubCategoria { get; set; }
+        public int IdSubCategoria { get; set; }
         public string NombreSubCategoria { get; set; }
-        public short IdCategoria { get; set; }
+        public int IdCategoria { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Articulo> Articulo { get; set; }

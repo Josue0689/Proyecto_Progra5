@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoProgramado
+namespace ProyectoProgramadoWCF
 {
     using System;
     using System.Data.Entity;

@@ -36,24 +36,76 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articulo.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Logica\Interfaces\IProyectoProgramadoWCF.cs" />
+    <Compile Include="ModeloBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logica\Servicios\ServicioProyectoProgramadoWCF.cs" />
+    <Compile Include="SubCategoria.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="ModeloBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModeloBD.edmx.diagram">
+      <DependentUpon>ModeloBD.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logica\Acciones\" />
     <Folder Include="Logica\Especificaciones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModeloBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloBD.edmx</DependentUpon>
+      <LastGenOutput>ModeloBD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModeloBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloBD.edmx</DependentUpon>
+      <LastGenOutput>ModeloBD.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

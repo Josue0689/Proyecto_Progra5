@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoProgramado", "ProyectoProgramado\ProyectoProgramado.csproj", "{E4346738-AED5-48A9-91C9-B34822FEC0CE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoProgramadoWCF", "ProyectoProgramadoWCF\ProyectoProgramadoWCF.csproj", "{A5CCFEC7-BC8B-48B6-9FA2-C47D051375DA}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E4346738-AED5-48A9-91C9-B34822FEC0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4346738-AED5-48A9-91C9-B34822FEC0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4346738-AED5-48A9-91C9-B34822FEC0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4346738-AED5-48A9-91C9-B34822FEC0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5CCFEC7-BC8B-48B6-9FA2-C47D051375DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5CCFEC7-BC8B-48B6-9FA2-C47D051375DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5CCFEC7-BC8B-48B6-9FA2-C47D051375DA}.Release|Any CPU.ActiveCfg = Release|Any CPU

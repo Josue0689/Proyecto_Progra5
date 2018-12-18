@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoProgramado
+namespace ProyectoProgramadoWCF
 {
     using System;
     using System.Collections.Generic;
@@ -15,13 +15,13 @@ namespace ProyectoProgramado
     public partial class Articulo
     {
         public short IdArticulo { get; set; }
-        public short SubCategoria { get; set; }
+        public int SubCategoria { get; set; }
         public string Descripcion { get; set; }
         public Nullable<System.DateTime> FechaRecibido { get; set; }
         public short Estado { get; set; }
         public Nullable<System.DateTime> FechaEntrega { get; set; }
         public string NombreDueno { get; set; }
-        public System.Guid IngresadoPor { get; set; }
+        public int IngresadoPor { get; set; }
     
         public virtual SubCategoria SubCategoria1 { get; set; }
         public virtual Usuario Usuario { get; set; }

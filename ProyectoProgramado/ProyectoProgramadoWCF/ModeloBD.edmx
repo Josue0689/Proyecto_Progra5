@@ -4,47 +4,47 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ObjetosPerdidosModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ObjetosPerdidosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Articulo">
           <Key>
             <PropertyRef Name="IdArticulo" />
           </Key>
           <Property Name="IdArticulo" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SubCategoria" Type="smallint" Nullable="false" />
+          <Property Name="SubCategoria" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="500" />
           <Property Name="FechaRecibido" Type="datetime" />
           <Property Name="Estado" Type="smallint" Nullable="false" />
           <Property Name="FechaEntrega" Type="datetime" />
           <Property Name="NombreDueno" Type="varchar" MaxLength="50" />
-          <Property Name="IngresadoPor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IngresadoPor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="IdCategoria" />
           </Key>
-          <Property Name="IdCategoria" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreCategoria" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SubCategoria">
           <Key>
             <PropertyRef Name="IdSubCategoria" />
           </Key>
-          <Property Name="IdSubCategoria" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSubCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreSubCategoria" Type="varchar" MaxLength="50" />
-          <Property Name="IdCategoria" Type="smallint" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUser" />
           </Key>
-          <Property Name="IdUser" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="Telefono" Type="varchar" MaxLength="50" />
           <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdTipoUsuario" Type="smallint" Nullable="false" />
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Articulo_SubCategoria">
           <End Role="SubCategoria" Type="Self.SubCategoria" Multiplicity="1" />
@@ -82,7 +82,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ObjetosPerdidosModeloStoreContainer">
+        <EntityContainer Name="ObjetosPerdidosModelStoreContainer">
           <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubCategoria" EntityType="Self.SubCategoria" Schema="dbo" store:Type="Tables" />
@@ -104,19 +104,19 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ObjetosPerdidosModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ObjetosPerdidosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Articulo">
           <Key>
             <PropertyRef Name="IdArticulo" />
           </Key>
           <Property Name="IdArticulo" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubCategoria" Type="Int16" Nullable="false" />
+          <Property Name="SubCategoria" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="FechaRecibido" Type="DateTime" Precision="3" />
           <Property Name="Estado" Type="Int16" Nullable="false" />
           <Property Name="FechaEntrega" Type="DateTime" Precision="3" />
           <Property Name="NombreDueno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IngresadoPor" Type="Guid" Nullable="false" />
+          <Property Name="IngresadoPor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SubCategoria1" Relationship="Self.FK_Articulo_SubCategoria" FromRole="Articulo" ToRole="SubCategoria" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Articulo_Usuario" FromRole="Articulo" ToRole="Usuario" />
         </EntityType>
@@ -124,7 +124,7 @@
           <Key>
             <PropertyRef Name="IdCategoria" />
           </Key>
-          <Property Name="IdCategoria" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SubCategoria" Relationship="Self.FK_SubCategoria_Categoria" FromRole="Categoria" ToRole="SubCategoria" />
         </EntityType>
@@ -132,9 +132,9 @@
           <Key>
             <PropertyRef Name="IdSubCategoria" />
           </Key>
-          <Property Name="IdSubCategoria" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreSubCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdCategoria" Type="Int16" Nullable="false" />
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Articulo" Relationship="Self.FK_Articulo_SubCategoria" FromRole="SubCategoria" ToRole="Articulo" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK_SubCategoria_Categoria" FromRole="SubCategoria" ToRole="Categoria" />
         </EntityType>
@@ -142,14 +142,14 @@
           <Key>
             <PropertyRef Name="IdUser" />
           </Key>
-          <Property Name="IdUser" Type="Guid" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IdTipoUsuario" Type="Int16" Nullable="false" />
+          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Articulo" Relationship="Self.FK_Articulo_Usuario" FromRole="Usuario" ToRole="Articulo" />
         </EntityType>
         <Association Name="FK_Articulo_SubCategoria">
@@ -211,9 +211,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ObjetosPerdidosModeloStoreContainer" CdmEntityContainer="ObjetosPerdidosEntities">
+        <EntityContainerMapping StorageEntityContainer="ObjetosPerdidosModelStoreContainer" CdmEntityContainer="ObjetosPerdidosEntities">
           <EntitySetMapping Name="Articulo">
-            <EntityTypeMapping TypeName="ObjetosPerdidosModelo.Articulo">
+            <EntityTypeMapping TypeName="ObjetosPerdidosModel.Articulo">
               <MappingFragment StoreEntitySet="Articulo">
                 <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
                 <ScalarProperty Name="SubCategoria" ColumnName="SubCategoria" />
@@ -227,7 +227,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categoria">
-            <EntityTypeMapping TypeName="ObjetosPerdidosModelo.Categoria">
+            <EntityTypeMapping TypeName="ObjetosPerdidosModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
                 <ScalarProperty Name="NombreCategoria" ColumnName="NombreCategoria" />
@@ -235,7 +235,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SubCategoria">
-            <EntityTypeMapping TypeName="ObjetosPerdidosModelo.SubCategoria">
+            <EntityTypeMapping TypeName="ObjetosPerdidosModel.SubCategoria">
               <MappingFragment StoreEntitySet="SubCategoria">
                 <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
                 <ScalarProperty Name="NombreSubCategoria" ColumnName="NombreSubCategoria" />
@@ -244,7 +244,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="ObjetosPerdidosModelo.Usuario">
+            <EntityTypeMapping TypeName="ObjetosPerdidosModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />

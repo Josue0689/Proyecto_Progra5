@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e9f5310627c42428c1c08649253af10" Name="Diagram1">
+        <EntityTypeShape EntityType="ObjetosPerdidosModel.Articulo" Width="1.5" PointX="5.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ObjetosPerdidosModel.Categoria" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ObjetosPerdidosModel.SubCategoria" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ObjetosPerdidosModel.Usuario" Width="1.5" PointX="7.875" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="ObjetosPerdidosModel.FK_Articulo_SubCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="ObjetosPerdidosModel.FK_Articulo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ObjetosPerdidosModel.FK_SubCategoria_Categoria" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
